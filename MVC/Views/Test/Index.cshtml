@@ -1,0 +1,24 @@
+﻿@Html.Partial("~/Views/Shared/Test/_ToolBar.cshtml")
+@*@Html.Action("List", "Test", new { area = "" })*@
+@Html.Partial("~/Views/Shared/Test/_List.cshtml")
+<div id="divAjax">
+</div>
+@using (Ajax.BeginForm("List", "Test", new { area = "" },
+    new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ajaxList", InsertionMode = InsertionMode.Replace },
+    new { id = "dumyList" }))
+{ }
+@using (Ajax.BeginForm("Read", "Test", new { area = "" },
+    new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divAjax", InsertionMode = InsertionMode.Replace },
+    new { id = "dumyRead" }))
+{
+    <input type="hidden" id="dumyID" name="id" />
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#dumyList').submit();
+        })
+    </script>
+    }
+

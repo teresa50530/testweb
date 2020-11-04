@@ -1,0 +1,9 @@
+D:\teresa\Solution1\teresa.information\bin\Debug\teresa.information.dll
+D:\teresa\Solution1\teresa.information\bin\Debug\teresa.information.pdb
+D:\teresa\Solution1\teresa.information\obj\Debug\teresa.information.dll
+D:\teresa\Solution1\teresa.information\obj\Debug\teresa.information.pdb
+D:\teresa\Solution1\teresa.information\obj\Debug\teresa.information.csprojAssemblyReference.cache
+D:\TEST\teresa.information\bin\Debug\teresa.information.dll
+D:\TEST\teresa.information\bin\Debug\teresa.information.pdb
+D:\TEST\teresa.information\obj\Debug\teresa.information.dll
+D:\TEST\teresa.information\obj\Debug\teresa.information.pdb

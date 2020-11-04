@@ -1,0 +1,72 @@
+﻿@model teresa.information.TestMasterInfo
+
+<style>
+    .badge {
+        background-color: antiquewhite;
+        color: lightcoral;
+    }
+</style>
+
+<h3>_READ</h3>
+<div class="form-group">
+    <label class="badge"> @Html.DisplayNameFor(i => i.SID)</label>
+    <input type="email" class="form-control col-sm-112 text-left" id="exampleInputEmail1"
+           disabled="disabled" value="@Html.DisplayTextFor(i => i.SID)">
+</div>
+
+
+<div class="form-group">
+    <label class="badge"> @Html.DisplayNameFor(i => i.ID)</label>
+    <input type="email" class="form-control col-sm-112 text-left" id="exampleInputEmail1"
+           disabled="disabled" value="@Html.DisplayTextFor(i => i.ID)">
+</div>
+
+<div class="form-group">
+    <label class="badge"> @Html.DisplayNameFor(i => i.NO)</label>
+    <input type="email" class="form-control col-sm-112 text-left" id="exampleInputEmail1"
+           disabled="disabled" value="@Html.DisplayTextFor(i => i.NO)">
+</div>
+
+<div class="form-group">
+    <label class="badge"> @Html.DisplayNameFor(i => i.Name)</label>
+    <input type="email" class="form-control col-sm-112 text-left" id="exampleInputEmail1"
+           disabled="disabled" value="@Html.DisplayTextFor(i => i.Name)">
+</div>
+
+<div class="form-group">
+    <label class="badge"> @Html.DisplayNameFor(i => i.Address)</label>
+    <input type="email" class="form-control col-sm-112 text-left" id="exampleInputEmail1"
+           disabled="disabled" value="@Html.DisplayTextFor(i => i.Address)">
+</div>
+<div class="form-group">
+    <label class="badge"> @Html.DisplayNameFor(i => i.Age)</label>
+    <input type="email" class="form-control col-sm-112 text-left" id="exampleInputEmail1"
+           disabled="disabled" value="@Html.DisplayTextFor(i => i.Age)">
+</div>
+<div class="form-group">
+    <label class="badge"> @Html.DisplayNameFor(i => i.Birthday)</label>
+    <input type="email" class="form-control col-sm-112 text-left" id="exampleInputEmail1"
+           disabled="disabled" value="@Html.DisplayFor(i => i.Birthday)">
+</div>
+<div class="form-group">
+    <label class="badge"> @Html.DisplayNameFor(i => i.CreateTime)</label>
+    <input type="email" class="form-control col-sm-112 text-left" id="exampleInputEmail1"
+           disabled="disabled" value="@Html.DisplayFor(i => i.CreateTime)">
+</div>
+<div class="form-group">
+    <label class="badge"> @Html.DisplayNameFor(i => i.UpdaueTime)</label>
+    <input type="email" class="form-control col-sm-112 text-left" id="exampleInputEmail1"
+           disabled="disabled" value="@Html.DisplayFor(i => i.UpdaueTime)">
+</div>
+
+@using (Ajax.BeginForm("Do", "Test", new { area = "", sid = Model.SID, id = Model.ID },
+    new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divAjax", InsertionMode = InsertionMode.Replace }, new { id = "fmCreate" }))
+
+{
+    <div class="btn-group">
+        <button style="background-color:antiquewhite" type="submit" name="mode" value="Insert">新增</button>
+        <button style="background-color:aliceblue" type="submit" name="mode" value="Edit">編輯</button>
+        <button style="background-color:antiquewhite" type="submit" name="mode" value="Delete">刪除</button>
+    </div>
+    @Html.AntiForgeryToken()
+}
