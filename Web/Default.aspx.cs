@@ -20,8 +20,8 @@ namespace Web
             }
             get
             {
-                if (ViewState["pagintation"] == null) ViewState["pagintation"]= new PageInationInfo() ;
-                return (PageInationInfo)ViewState["pagintation"];
+                if (ViewState["pagination"] == null) ViewState["pagination"] = new PageInationInfo() ;
+                return (PageInationInfo)ViewState["pagination"];
             }
         }
 
@@ -61,7 +61,7 @@ namespace Web
 
         #region gv
 
-        private void bindMaster(string name)
+        protected void bindMaster(string name)
         {
             TestBiz.Master biz = new TestBiz.Master();
             var _pagination = pagination;
@@ -69,7 +69,8 @@ namespace Web
             pagination = _pagination;
             gvMaster.DataSource = dt; //先存他的SOURCE
             gvMaster.DataBind(); //在BIND
-
+            Pager.pagination = pagination;
+            upGridView.Update();
         }
         //選取
         protected void gvMaster_SelectedIndexChanged1(object sender, EventArgs e)
@@ -88,19 +89,19 @@ namespace Web
             //bindMaster(null);
         }
 
-        protected void gvMaster_PageIndexChanged(object sender, EventArgs e)
-        {
-            var btn = (Button)sender;
-         
-            int lastPage = pagination.Total / pagination.Size;
-            if ((pagination.Total % pagination.Size) > 0) lastPage = lastPage + 1;
-            if (btn.CommandName == "pageFirst") pagination.Index = 1;
-            if (btn.CommandName == "pagePrev") pagination.Index = (pagination.Index - 1) == 0 ? 1 : pagination.Index - 1;
-            if (btn.CommandName == "pageNext") pagination.Index = (pagination.Index + 1) > lastPage ? lastPage : (pagination.Index + 1);
-            if (btn.CommandName == "pageLast") pagination.Index = lastPage;
+        //protected void gvMaster_PageIndexChanged(object sender, EventArgs e)
+        //{
+        //    var btn = (Button)sender;
 
-            bindMaster(null);
-        }
+        //    int lastPage = pagination.Total / pagination.Size;
+        //    if ((pagination.Total % pagination.Size) > 0) lastPage = lastPage + 1;
+        //    if (btn.CommandName == "pageFirst") pagination.Index = 1;
+        //    if (btn.CommandName == "pagePrev") pagination.Index = (pagination.Index - 1) == 0 ? 1 : pagination.Index - 1;
+        //    if (btn.CommandName == "pageNext") pagination.Index = (pagination.Index + 1) > lastPage ? lastPage : (pagination.Index + 1);
+        //    if (btn.CommandName == "pageLast") pagination.Index = lastPage;
+
+        //    bindMaster(null);
+        //}
 
         protected void gvMaster_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -430,7 +431,7 @@ namespace Web
             else
             {
                 fvMaster.ChangeMode(FormViewMode.ReadOnly);
-                bindMasterDetails(SID, ID);
+                bindMasterForm(null, entity.ID);
                 bindMaster(null);
             }
         }
@@ -514,6 +515,11 @@ namespace Web
             return dt;          
         }
 
-     
+        protected void Pager_PageIndexChanged(object sender, EventArgs e, PageInationInfo pagination)
+        {
+            this.pagination = pagination;
+            bindMaster(null);
+        }
+
     }
 }

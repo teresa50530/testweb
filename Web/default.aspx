@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Web._default" EnableEventValidation="false" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Src="~/UserControl/Pager.ascx" TagPrefix="uc1" TagName="Pager" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="upGridView" runat="server" UpdateMode="Conditional">
@@ -17,8 +19,8 @@
 
             <asp:GridView ID="gvMaster" runat="server" AutoGenerateColumns="False"
                 AutoGenerateSelectButton="True" Width="100%" DataKeyNames="SID,ID"
-                OnSelectedIndexChanged="gvMaster_SelectedIndexChanged1" OnPageIndexChanging="gvMaster_PageIndexChanging"
-                PageSize="3" OnPageIndexChanged="gvMaster_PageIndexChanged" OnRowDataBound="gvMaster_RowDataBound" BackColor="AliceBlue">
+                OnSelectedIndexChanged="gvMaster_SelectedIndexChanged1"
+                PageSize="3"  OnRowDataBound="gvMaster_RowDataBound" BackColor="AliceBlue">
                 <Columns>
                     <asp:BoundField  DataField="NO" HeaderText="編號" HeaderStyle-BackColor="lightblue" />
                     <asp:BoundField DataField="Id" HeaderText="ID" HeaderStyle-BackColor="lightblue" />
@@ -39,11 +41,11 @@
             </asp:GridView>
             
     <br />
-            <asp:Button ID="btnFirst" runat="server" Text="第一頁" CommandName="pageFirst" OnClick="gvMaster_PageIndexChanged" BackColor="AntiqueWhite" BorderStyle="None" />
+<%--            <asp:Button ID="btnFirst" runat="server" Text="第一頁" CommandName="pageFirst" OnClick="gvMaster_PageIndexChanged" BackColor="AntiqueWhite" BorderStyle="None" />
             <asp:Button ID="btnPrev" runat="server" Text="上一頁" CommandName="pagePrev" OnClick="gvMaster_PageIndexChanged" BackColor="AntiqueWhite" BorderStyle="None" />
             <asp:Button ID="btnNext" runat="server" Text="下一頁" CommandName="pageNext" OnClick="gvMaster_PageIndexChanged" BackColor="AntiqueWhite" BorderStyle="None"/>
-            <asp:Button ID="btnLast" runat="server" Text="最後頁" CommandName="pageLast" OnClick="gvMaster_PageIndexChanged" BackColor="AntiqueWhite" BorderStyle="None"/>
-          
+            <asp:Button ID="btnLast" runat="server" Text="最後頁" CommandName="pageLast" OnClick="gvMaster_PageIndexChanged" BackColor="AntiqueWhite" BorderStyle="None"/>--%>
+            <uc1:Pager runat="server" ID="Pager" OnPageIndexChanged="Pager_PageIndexChanged"/>
     <br />
             <%=DateTime.Now.ToString() %>
         </ContentTemplate>

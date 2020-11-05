@@ -23,4 +23,3 @@ D:\TEST\Test\bin\Debug\zh-Hant\EntityFramework.SqlServer.resources.dll
 D:\TEST\Test\obj\Debug\Test.csproj.CopyComplete
 D:\TEST\Test\obj\Debug\Test.dll
 D:\TEST\Test\obj\Debug\Test.pdb
-D:\TEST\Test\obj\Debug\Test.csprojAssemblyReference.cache

@@ -69,40 +69,13 @@ namespace Web
         protected global::System.Web.UI.WebControls.GridView gvMaster;
 
         /// <summary>
-        /// btnFirst 控制項。
+        /// Pager 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFirst;
-
-        /// <summary>
-        /// btnPrev 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPrev;
-
-        /// <summary>
-        /// btnNext 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNext;
-
-        /// <summary>
-        /// btnLast 控制項。
-        /// </summary>
-        /// <remarks>
-        /// 自動產生的欄位。
-        /// 若要修改，請將欄位宣告從設計工具檔案移到程式碼後置檔案。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLast;
+        protected global::Web.UserControl.Pager Pager;
 
         /// <summary>
         /// upDetailsView 控制項。

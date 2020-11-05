@@ -7,3 +7,4 @@ D:\TEST\teresa.common\bin\Debug\teresa.common.dll
 D:\TEST\teresa.common\bin\Debug\teresa.common.pdb
 D:\TEST\teresa.common\obj\Debug\teresa.common.dll
 D:\TEST\teresa.common\obj\Debug\teresa.common.pdb
+D:\TEST\teresa.common\obj\Debug\teresa.common.csprojAssemblyReference.cache
